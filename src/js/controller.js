@@ -99,10 +99,10 @@ const controlAddRecipe = async function(newRecipe){
   try{
     //Render loading spinner
     addRecipeView.renderSpinner(); 
-
+    
     //Upload new recipe data
     await model.uploadRecipe(newRecipe);
-
+    
     //Render new recipe 
     recipeView.render(model.state.recipe);
     
@@ -112,16 +112,21 @@ const controlAddRecipe = async function(newRecipe){
     addRecipeView.renderMessage();
     
     window.history.pushState(null, '', `#${model.state.recipe.id}`)
-     
+    
     //Close modal window
     setTimeout(function(){
       addRecipeView.toggleWindow();
     }, MODAL_CLOSE_SEC * 1000); 
-
+    
   }catch(err){
     console.error('!!!', err);
     addRecipeView.renderError(err.message);
   }
+}
+
+const controlDeleteRecipe = function(){
+// find by id the recipe be deleted
+// delete recipe from the api
 }
 
 const init = function(){
@@ -142,6 +147,7 @@ const init = function(){
 
 }
 init();
+
 
 // performs same commands as the lines underneathe
 // addEventListener('hashchange', showRecipe);
