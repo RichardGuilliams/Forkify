@@ -125,6 +125,7 @@ const controlAddRecipe = async function(newRecipe){
 }
 
 const controlDeleteRecipe = function(){
+  console.log('it worked, continuous integration is set up');
 // find by id the recipe be deleted
 // delete recipe from the api
 }
@@ -139,12 +140,12 @@ const init = function(){
   //sSubscribe to the AddRecipeView EventHandlers
   addRecipeView.addHandlerUpload(controlAddRecipe);
 
-  //Subscribe to the SearchView EventHandlers
+  //Subscribe to the SearchView EventHandlers 
   searchView.addHandlerSearch(constrolSearchResults);
 
   //Subscribe to the PaginationView EventHandlers
   paginationView.addHandlerClick(controlPagination);
-
+  controlDeleteRecipe();
 }
 init();
 
