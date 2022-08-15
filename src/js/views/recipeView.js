@@ -1,6 +1,6 @@
 import View from './View.js';
 import icons from 'url:../../img/icons.svg'; // parcel2 requires any non script asset to have a url: at the beginning of the string
-import {Fraction} from 'fraction.js';
+import {Fraction} from 'fracty';
 
 class RecipeView extends View{
     _parentElement = document.querySelector('.recipe');
